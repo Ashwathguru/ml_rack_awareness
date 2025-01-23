@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="result-container">
+    <h2>Processing Results</h2>
+    <div class="image-section">
+        <h3>Uploaded Image</h3>
+        <img src="{{ url_for('static', filename='images/' + uploaded_image) }}" alt="Uploaded Image">
+    </div>
+    <div class="image-section">
+        <h3>Processed Image</h3>
+        <img src="{{ url_for('static', filename='runs/' + uploaded_image) }}" alt="Processed Image">
+    </div>
+    <div class="result-details">
+        <p><strong>Number of Racks Detected:</strong> {{ racks_detected }}</p>
+        <p><strong>Rack Vacancy Percentage:</strong> {{ rack_vacancy }}%</p>
+    </div>
+    <a href="/">Process Another Image</a>
+</div>
+{% endblock %}
